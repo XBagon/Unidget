@@ -7,6 +7,8 @@ using System;
 public class Tile : MonoBehaviour
 {
     public Vector2 position;
+    public GameObject Unidget;
+
     GameManager gm;
 
     public float[] Properties;
@@ -54,7 +56,7 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gm.PayResources("Money", 50)) GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
+        if (gm.PayResources("Money", 50)) Unidget = (GameObject) GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
     }
     
 }
