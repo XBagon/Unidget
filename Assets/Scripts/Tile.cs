@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        PropertyCount = 6;
+        PropertyCount = 4;
 
         Properties = new float[PropertyCount];
         

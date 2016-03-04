@@ -39,12 +39,6 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
-    public void Update ()
-    {
-        moneyIndicator.text = Resources[0] + "";
-    }
-
-
     public bool PayResources(string resource, int amount)
     {
         if (Resources[GetResource(resource)] >= amount)
