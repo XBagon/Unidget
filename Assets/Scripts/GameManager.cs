@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Unidget;
     public AnimationCurve RandomCurve;
+    public Text moneyIndicator;
 
 
 
@@ -36,6 +37,11 @@ public class GameManager : MonoBehaviour
             case "Water": return 2;
         }
         return 0;
+    }
+
+    public void Update ()
+    {
+        moneyIndicator.text = Resources[0] + "";
     }
 
 
