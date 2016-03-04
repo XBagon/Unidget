@@ -8,14 +8,11 @@ public class GameManager : MonoBehaviour
     public GameObject Unidget;
     public AnimationCurve RandomCurve;
 
-    public Text moneyIndicator;
+
 
     public List<Material> PropetyMaterials = new List<Material>();
 
-    void Update()
-    {
-        moneyIndicator.text = Resources[0] + "";
-    }
+    
 
     public void Start()
     {

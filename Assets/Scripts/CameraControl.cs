@@ -32,7 +32,5 @@ public class CameraControl : MonoBehaviour {
         {
             transform.Translate(new Vector3(0, -(speed * Time.deltaTime)));
         }
-
-        Debug.Log(mousePosition.x + " | " + mousePosition.y);
     }
 }

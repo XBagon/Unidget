@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
 
     public void SetTexture()
     {
-        Debug.Log(Array.IndexOf(Properties, Properties.Max()));
+        GetComponent<MeshRenderer>().material = gm.PropetyMaterials[Array.IndexOf(Properties, Properties.Max())];
     }
 
 
