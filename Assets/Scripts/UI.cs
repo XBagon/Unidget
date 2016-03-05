@@ -16,4 +16,6 @@ public class UI : MonoBehaviour {
     {
         moneyIndicator.text = gm.Resources[0].Amount + "";
     }
+
+    
 }

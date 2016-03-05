@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
 
     GameManager gm;
 
-    public List<Property> Properties;
+    public List<Property> Properties = new List<Property>();
   
 
     public void SetTexture()
@@ -29,12 +29,7 @@ public class Tile : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        Properties.Add(Property.SoilQuality);
-        Properties.Add(Property.WindStrength);
-        Properties.Add(Property.SunStrength);
-        Properties.Add(Property.WaterStrength);
-        Properties.Add(Property.Water);
-        Properties.Add(Property.Iron);
+        Properties.AddRange(Property.props);
 
         for (int i = 0; i < Properties.Count; i++)
         {

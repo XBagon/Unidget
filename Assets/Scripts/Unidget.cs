@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 
 [Serializable]
-public class Element
+public class Element 
 {
 
 }
@@ -18,7 +18,7 @@ public class Unidget : MonoBehaviour {
 
     public List<Element> elements = new List<Element>();
 
-    void addElement(Element e)
+    public void addElement(Element e)
     {
         elements.Add(e);
         Kombinieren(Resource.Seeds, Resource.Water, UnidgetType.Wheat);

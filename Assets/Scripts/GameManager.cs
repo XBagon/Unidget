@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject Unidget;
     public AnimationCurve RandomCurve;
 
-    public Element DraggingElement;
 
     //0 SoilQuality;
     //1 WindStrength;
@@ -37,20 +36,9 @@ public class GameManager : MonoBehaviour
         return y * 100;
     }
 
-    public int GetResource(string name)
-    {
-        switch (name)
-        {
-            case "Money": return 0;
-            case "Power": return 1;
-            case "Water": return 2;
-        }
-        return 0;
-    }
-
     public bool PayResources(string resource, int amount)
     {
-        int a = Resources.Where(s => s.name == resource).First().Amount;
+        int a = Resources.Where(s => s.Name == resource).First().Amount;
         if (a >= amount)
         {
             a -= amount;

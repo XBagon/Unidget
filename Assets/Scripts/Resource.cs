@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-
+[Serializable]
 public class Resource : Element {
 
     public static Resource Money = new Resource("Money");
@@ -16,13 +16,13 @@ public class Resource : Element {
     Money, Power, Water, Wheat, Seeds
     };
 
-    public string name;
+    public string Name;
     public int Amount;
 
 
     public Resource(string name)
     {
-        this.name = name;
+        this.Name = name;
     }
 	
 }
