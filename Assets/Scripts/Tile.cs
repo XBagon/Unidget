@@ -12,6 +12,10 @@ public class Tile : MonoBehaviour
 {
     public Vector2 position;
     public GameObject Unidget;
+    public GameObject blockInfo;
+
+    public float waitTime;
+    public float waitTimer;
 
     GameManager gm;
 
@@ -27,6 +31,7 @@ public class Tile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        blockInfo = GameObject.Find("BlockInfo");
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         Properties.AddRange(Property.props);
@@ -39,10 +44,35 @@ public class Tile : MonoBehaviour
         SetTexture();
     }
 
+    bool available;
+
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void OnMouseEnter()
+    {
+        waitTimer = waitTime;
+    }
+
+    void OnMouseOver() { 
+        waitTimer -= Time.deltaTime;
+
+        if (waitTimer <= 0)
+        {
+            blockInfo.SetActive(true);
+            blockInfo.transform.position = gameObject.transform.position + new Vector3(0, 2f, 0);
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (blockInfo.activeSelf == true)
+        {
+            blockInfo.SetActive(false);
+        }
     }
 
     void OnMouseDown()

@@ -10,6 +10,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public GameObject Unidget;
+    public GameObject BlockInfo;
     public AnimationCurve RandomCurve;
 
 
