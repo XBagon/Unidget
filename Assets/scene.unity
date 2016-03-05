@@ -422,35 +422,27 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0.01
-      inSlope: 1.3161509
-      outSlope: 1.3161509
+      inSlope: 0.54393
+      outSlope: 0.54393
       tangentMode: 10
-    - time: 0.2540785
-      value: 0.34440565
-      inSlope: 0.84347713
-      outSlope: 0.84347713
-      tangentMode: 10
-    - time: 0.6945752
-      value: 0.5077433
-      inSlope: 0.9405078
-      outSlope: 0.9405078
-      tangentMode: 10
-    - time: 0.88506174
-      value: 0.79541844
-      inSlope: 1.6015674
-      outSlope: 1.6015674
+    - time: 0.8989283
+      value: 0.49895406
+      inSlope: 1.0309412
+      outSlope: 1.0309412
+      tangentMode: 0
+    - time: 0.96124065
+      value: 0.7800373
+      inSlope: 4.9639797
+      outSlope: 4.9639797
       tangentMode: 10
     - time: 1
       value: 0.99
-      inSlope: 1.6929225
-      outSlope: 1.6929225
+      inSlope: 5.4170856
+      outSlope: 5.4170856
       tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  moneyIndicator: {fileID: 530169753}
-  PropetyMaterials: []
-  Resources: 640000006400000064000000
 --- !u!4 &1487224205
 Transform:
   m_ObjectHideFlags: 0
@@ -491,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapTile: {fileID: 149972, guid: 08242210b4e6fdd409e724d693ecb248, type: 2}
-  initSize: 10
+  initSize: 15
 --- !u!4 &1535790334
 Transform:
   m_ObjectHideFlags: 0
@@ -675,6 +667,7 @@ GameObject:
   - 223: {fileID: 2001726287}
   - 114: {fileID: 2001726286}
   - 114: {fileID: 2001726285}
+  - 114: {fileID: 2001726289}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -756,3 +749,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2001726289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001726284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773b503696537e849a6e67f39fc35b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyIndicator: {fileID: 530169753}

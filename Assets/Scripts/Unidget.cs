@@ -1,25 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-public enum Elements
+[Serializable]
+public class Element
 {
-    Sun, Water, Power, Seeds, Wheat
+
 }
 
-public class Unidget : MonoBehaviour {
 
+public class Unidget : MonoBehaviour {
+    public GameObject Tile;
+    public Tile stats;
+    GameManager gm;
     bool Store = false;
 
-    List<Elements> elements = new List<Elements>();
+    public List<Element> elements = new List<Element>();
 
-    void addElement(Elements e)
+    void addElement(Element e)
     {
         elements.Add(e);
-        Kombineren(Elements.Seeds, Elements.Water, Elements.Wheat);
+        Kombinieren(Resource.Seeds, Resource.Water, UnidgetType.Wheat);
+        Kombinieren(Resource.Power, Property.WindStrength, UnidgetType.WindPower);
     }
 
-   public void Kombineren(Elements e, Elements e2, Elements result)
+
+   public void Kombinieren(Element e, Element e2, UnidgetType result)
     {
         if (elements.Contains(e) && elements.Contains(e2))
         {
@@ -31,11 +38,12 @@ public class Unidget : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        stats = Tile.GetComponent<Tile>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 }

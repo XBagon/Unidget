@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
+
+
+
+
 public class Tile : MonoBehaviour
 {
     public Vector2 position;
@@ -11,20 +15,13 @@ public class Tile : MonoBehaviour
 
     GameManager gm;
 
-    public float[] Properties;
-    public int PropertyCount;
-    //0 SoilQuality;
-    //1 WindStrength;
-    //2 SunStrength;
-    //3 WaterStrength;
-    //4 Water;
-    //5 Iron;
+    public List<Property> Properties;
+  
 
     public void SetTexture()
     {
-        GetComponent<MeshRenderer>().material = gm.PropetyMaterials[Array.IndexOf(Properties, Properties.Max())];
+        GetComponent<MeshRenderer>().material = Properties.OrderByDescending(x => x.Amount).First().mat;
     }
-
 
 
     // Use this for initialization
@@ -32,18 +29,17 @@ public class Tile : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        PropertyCount = 6;
+        Properties.Add(Property.SoilQuality);
+        Properties.Add(Property.WindStrength);
+        Properties.Add(Property.SunStrength);
+        Properties.Add(Property.WaterStrength);
+        Properties.Add(Property.Water);
+        Properties.Add(Property.Iron);
 
-        Properties = new float[PropertyCount];
-        
-        
-
-        for(int i = 0; i < PropertyCount; i++)
+        for (int i = 0; i < Properties.Count; i++)
         {
-            Properties[i] = gm.GetRandomProperyValue();
+            Properties[i].Amount = gm.GetRandomProperyValue();
         }
-        
-
 
         SetTexture();
     }
@@ -56,7 +52,11 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gm.PayResources("Money", 50)) Unidget = (GameObject) GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
+        if (gm.PayResources("Money", 50))
+        {
+            Unidget = (GameObject)GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
+            Unidget.GetComponent<Unidget>().Tile = gameObject;
+        }
     }
     
 }
