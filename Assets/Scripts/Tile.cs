@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
 {
     public Vector2 position;
     public GameObject Unidget;
-    public GameObject blockInfo;
+    public GameObject TileUI;
 
     public float waitTime;
     public float waitTimer;
@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
     GameManager gm;
 
     public List<Property> Properties = new List<Property>();
-  
+
 
     public void SetTexture()
     {
@@ -31,7 +31,7 @@ public class Tile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        blockInfo = GameObject.Find("BlockInfo");
+        TileUI = GameObject.Find("TileUI");
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         Properties.AddRange(Property.props);
@@ -52,28 +52,44 @@ public class Tile : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+    
     void OnMouseEnter()
     {
         waitTimer = waitTime;
     }
 
-    void OnMouseOver() { 
+    void OnMouseOver() {
         waitTimer -= Time.deltaTime;
 
         if (waitTimer <= 0)
         {
-            blockInfo.SetActive(true);
-            blockInfo.transform.position = gameObject.transform.position + new Vector3(0, 2f, 0);
+            TileUI.GetComponent<TileUI>().UpdateUIText(Properties);
+            TileUI.SetActive(true);
+            TileUI.transform.GetChild(0).position = gameObject.transform.position;
+            TileUI.transform.rotation = Camera.main.transform.rotation;
         }
     }
 
     void OnMouseExit()
     {
-        if (blockInfo.activeSelf == true)
+        if (waitTimer <= 0)
         {
-            blockInfo.SetActive(false);
+            TileUI.SetActive(false);
         }
     }
+
+
+
+
+
+
+
 
     void OnMouseDown()
     {

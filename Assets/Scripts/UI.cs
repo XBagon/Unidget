@@ -12,6 +12,8 @@ public class UI : MonoBehaviour {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+
+
     void Update()
     {
         moneyIndicator.text = gm.Resources[0].Amount + "";
