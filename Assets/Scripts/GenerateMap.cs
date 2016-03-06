@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GenerateMap : MonoBehaviour {
-    GameObject Map;
     public GameObject MapTile;
     public int initSize;
 	// Use this for initialization

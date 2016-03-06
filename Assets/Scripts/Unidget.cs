@@ -11,6 +11,7 @@ public class Element
 
 
 public class Unidget : MonoBehaviour {
+    public Material mat;
     public GameObject Tile;
     public Tile stats;
     GameManager gm;
@@ -38,6 +39,11 @@ public class Unidget : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        foreach (MeshRenderer m in transform.GetComponentsInChildren<MeshRenderer>()) {
+
+            m.material = mat;
+        }
+
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         stats = Tile.GetComponent<Tile>();
 	}

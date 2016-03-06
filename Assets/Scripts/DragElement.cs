@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using UnityEngine.EventSystems;
+using System;
 
-public class DragElement : MonoBehaviour {
+public class DragElement : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDropHandler {
     public char rorp;
     public string Name;
     Element e;
@@ -20,24 +22,22 @@ public class DragElement : MonoBehaviour {
         }
     }
 
-    void OnMouseDrag()
+ 
+
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Drag");
+        throw new NotImplementedException();
     }
 
-    void OnMouseUp()
+    public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("UP");
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.transform.gameObject.name);
-            if (hit.transform.gameObject.GetComponent<Unidget>())
-            {
-                hit.transform.gameObject.GetComponent<Unidget>().addElement(e);
-            }
-        }
+        throw new NotImplementedException();
     }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
+
 }
+

@@ -19,7 +19,6 @@ public class Property : Element
     [NonSerialized]
     public Material mat;
     public string Name;
-    public float Amount;
 
     public Property(string name, int index)
     {
@@ -27,7 +26,6 @@ public class Property : Element
         // mat = GameObject.Find("GameManager").GetComponent<GameManager>().PropertyMaterials[index];
         string path = "Materials/" + Name.Replace(" ", "") + "Tile";
         mat = Resources.Load<Material>(path);
-        Debug.Log(path);
     }
 
 

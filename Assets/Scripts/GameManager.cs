@@ -33,16 +33,16 @@ public class GameManager : MonoBehaviour
 
     public float GetRandomProperyValue()
     {
-        float y = RandomCurve.Evaluate(UnityEngine.Random.value);
+        float y = RandomCurve.Evaluate(UnityEngine.Random.Range(0f,1f));
         return y * 100;
     }
 
     public bool PayResources(string resource, int amount)
     {
-        int a = Resources.Where(s => s.Name == resource).First().Amount;
-        if (a >= amount)
+        
+        if (Resources.Where(s => s.Name == resource).First().Amount >= amount)
         {
-            a -= amount;
+            int a = Resources.Where(s => s.Name == resource).First().Amount-= amount;
             return true;
         }
 

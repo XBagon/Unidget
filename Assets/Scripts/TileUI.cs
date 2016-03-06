@@ -27,12 +27,13 @@ public class TileUI : MonoBehaviour {
 	
 	}
 
-    public void UpdateUIText(List<Property> props)
+    public void UpdateUIText(List<AmountObject> props)
     {
         for(int i = 0; i < proptexts.Count; i++)
         {
             proptexts[i].text =  props[i].Amount+ " %";
-            propimages[i].material = props[i].mat;
+            Property prp = (Property)props[i].obj;
+            propimages[i].material = prp.mat;
         }
     }
 

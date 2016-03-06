@@ -14,17 +14,21 @@ public class Tile : MonoBehaviour
     public GameObject Unidget;
     public GameObject TileUI;
 
+    bool full;
+
     public float waitTime;
     public float waitTimer;
 
     GameManager gm;
 
-    public List<Property> Properties = new List<Property>();
+    public List<AmountObject> Properties = new List<AmountObject>();
+
 
 
     public void SetTexture()
     {
-        GetComponent<MeshRenderer>().material = Properties.OrderByDescending(x => x.Amount).First().mat;
+        Property prp = (Property)Properties.OrderByDescending(x => x.Amount).First().obj;
+        GetComponent<MeshRenderer>().material = prp.mat;
     }
 
 
@@ -34,17 +38,17 @@ public class Tile : MonoBehaviour
         TileUI = GameObject.Find("TileUI");
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        Properties.AddRange(Property.props);
-
-        for (int i = 0; i < Properties.Count; i++)
+        for (int i = 0; i < Property.props.Count; i++)
         {
-            Properties[i].Amount = gm.GetRandomProperyValue();
+            Properties.Add(new AmountObject(Property.props[i], gm.GetRandomProperyValue()));
         }
+        //Properties.AddRange(new List<Property>(Property.props));
+
+
 
         SetTexture();
     }
 
-    bool available;
 
     // Update is called once per frame
     void Update()
@@ -71,7 +75,7 @@ public class Tile : MonoBehaviour
         {
             TileUI.GetComponent<TileUI>().UpdateUIText(Properties);
             TileUI.SetActive(true);
-            TileUI.transform.GetChild(0).position = gameObject.transform.position;
+            TileUI.transform.GetChild(0).position = gameObject.transform.position + new Vector3(0,1,0);
             TileUI.transform.rotation = Camera.main.transform.rotation;
         }
     }
@@ -93,10 +97,14 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gm.PayResources("Money", 50))
+        if (!full)
         {
-            Unidget = (GameObject)GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
-            Unidget.GetComponent<Unidget>().Tile = gameObject;
+            if(gm.PayResources("Money", 50))
+            {
+                Unidget = (GameObject)GameObject.Instantiate(gm.Unidget, gameObject.transform.position + new Vector3(0, 0.5f, 0), new Quaternion());
+                Unidget.GetComponent<Unidget>().Tile = gameObject;
+                full = true;
+            }
         }
     }
     
