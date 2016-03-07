@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2350420}
   - 114: {fileID: 11495142}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
-  Unidget: {fileID: 103498, guid: 8cb8950a65bc0194ea6626f59d3aa3f8, type: 2}
-  blockInfo: {fileID: 0}
+  Unidget: {fileID: 123976, guid: 8cb8950a65bc0194ea6626f59d3aa3f8, type: 2}
+  TileUI: {fileID: 0}
   waitTime: 0.5
   waitTimer: 0
   Properties: []
@@ -111,7 +111,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Unidget
       value: 
-      objectReference: {fileID: 103498, guid: 8cb8950a65bc0194ea6626f59d3aa3f8, type: 2}
+      objectReference: {fileID: 123976, guid: 8cb8950a65bc0194ea6626f59d3aa3f8, type: 2}
     - target: {fileID: 0}
       propertyPath: blockInfo
       value: 

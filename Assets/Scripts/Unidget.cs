@@ -26,6 +26,8 @@ public class Unidget : MonoBehaviour {
         Kombinieren(Resource.Power, Property.WindStrength, UnidgetType.WindPower);
     }
 
+   
+
 
    public void Kombinieren(Element e, Element e2, UnidgetType result)
     {
@@ -47,9 +49,30 @@ public class Unidget : MonoBehaviour {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         stats = Tile.GetComponent<Tile>();
 	}
+
+    void OnMouseEnter()
+    {
+        Debug.Log("enter");
+        if (DragElement.holding)
+        {
+            elements.Add(DragElement.active.e);
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (DragElement.holding)
+        {
+            elements.Remove(DragElement.active.e);
+        }
+    }
 	
 	// Update is called once per frame
-	void Update () {
-	    
-	}
+	void OnDrop () {
+        if (DragElement.holding)
+        {
+            Debug.Log("active");
+        }
+        Debug.Log("notactive");
+    }
 }
