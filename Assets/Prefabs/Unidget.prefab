@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497254}
   - 114: {fileID: 11481738}
+  - 64: {fileID: 6445148}
   m_Layer: 0
   m_Name: Unidget
   m_TagString: Untagged
@@ -26,7 +27,6 @@ GameObject:
   - 4: {fileID: 473880}
   - 33: {fileID: 3336550}
   - 23: {fileID: 2328354}
-  - 64: {fileID: 6491184}
   m_Layer: 0
   m_Name: Quad (3)
   m_TagString: Untagged
@@ -44,7 +44,6 @@ GameObject:
   - 4: {fileID: 466768}
   - 33: {fileID: 3356478}
   - 23: {fileID: 2390834}
-  - 64: {fileID: 6470992}
   m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -62,7 +61,6 @@ GameObject:
   - 4: {fileID: 453656}
   - 33: {fileID: 3347674}
   - 23: {fileID: 2316232}
-  - 64: {fileID: 6424340}
   m_Layer: 0
   m_Name: Quad (5)
   m_TagString: Untagged
@@ -80,7 +78,6 @@ GameObject:
   - 4: {fileID: 490108}
   - 33: {fileID: 3337760}
   - 23: {fileID: 2361136}
-  - 64: {fileID: 6446558}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -98,7 +95,6 @@ GameObject:
   - 4: {fileID: 427132}
   - 33: {fileID: 3379930}
   - 23: {fileID: 2350846}
-  - 64: {fileID: 6440600}
   m_Layer: 0
   m_Name: Quad (4)
   m_TagString: Untagged
@@ -116,7 +112,6 @@ GameObject:
   - 4: {fileID: 475644}
   - 33: {fileID: 3350610}
   - 23: {fileID: 2390166}
-  - 64: {fileID: 6472676}
   m_Layer: 0
   m_Name: Quad (2)
   m_TagString: Untagged
@@ -412,78 +407,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194442}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6424340
+--- !u!64 &6445148
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180890}
+  m_GameObject: {fileID: 123976}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6440600
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194442}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6446558
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193808}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6470992
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 175382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6472676
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194836}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6491184
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125930}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &11481738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,6 +449,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123976}
