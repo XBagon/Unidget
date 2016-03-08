@@ -52,7 +52,6 @@ public class Unidget : MonoBehaviour {
 
     void OnMouseEnter()
     {
-        Debug.Log("enter");
         if (DragElement.holding)
         {
             elements.Add(DragElement.active.e);

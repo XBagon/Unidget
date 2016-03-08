@@ -18,6 +18,7 @@ public class Resource : Element {
 
     public string Name;
     public int Amount;
+    public Sprite sprite;
 
 
     public Resource(string name)
